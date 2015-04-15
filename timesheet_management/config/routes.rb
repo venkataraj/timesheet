@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :roles
+
+  devise_for :users
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -41,7 +44,7 @@ Rails.application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-
+root :to => 'home#index'
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
